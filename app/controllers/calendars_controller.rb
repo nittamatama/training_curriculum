@@ -15,7 +15,9 @@ class CalendarsController < ApplicationController
   private
 
   def plan_params
-    params.require(:calendars).permit(:date, :plan)
+    params.require(:plan).permit(:date, :plan)
+    # params.require(:calendarsではなく正しい箱の名前を指定したい).permit(:date, :plan)
+    # ストロングパラメーターのrequireで指定するべきものは何だったか
   end
 
   def getWeek
